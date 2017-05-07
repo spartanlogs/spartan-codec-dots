@@ -3,6 +3,7 @@ package codecs
 import (
 	"io"
 
+	"github.com/spartanlogs/spartan/codecs"
 	"github.com/spartanlogs/spartan/event"
 )
 
@@ -10,10 +11,10 @@ import (
 type DotCodec struct{}
 
 func init() {
-	Register("dots", newDotCodec)
+	codecs.Register("dots", newDotCodec)
 }
 
-func newDotCodec() (Codec, error) {
+func newDotCodec() (codecs.Codec, error) {
 	return &DotCodec{}, nil
 }
 
